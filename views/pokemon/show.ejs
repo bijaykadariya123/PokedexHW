@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= pokemon.name %></h1>
+    <img src=" <%= pokemon.img %>" alt="image">
+    <ul>
+        <li>
+            <h2>Type:<br> <%= pokemon.type %></h2></div><br><br>
+            <!-- <form action="/pokemon/<%= pokemon._id %>?_method=delete" method="post">
+                <input type="submit" value="DELETE">
+            </form> -->
+        </li>
+        <li>
+            <h2>Description</h2>
+            <h4>HP: <%= pokemon.stats.hp %></h4>
+            <h4>Attack <%= pokemon.stats.attack %></h4>
+            <h4>Defense: <%= pokemon.stats.defense %></h4>
+            <h4>spAttack: <%= pokemon.stats.spattack %></h4>
+            <h4>spDefense <%= pokemon.stats.spdefense %></h4>
+            <h4>Speed: <%= pokemon.stats.speed %></h4>
+        </li>
+        
+</ul>
+    <a href="/pokemon"><button>Main Page</button></a>
+    <a href="/pokemon/<%= pokemon._id %>/edit"><button>EDIT</button></a>
+    <form action="/pokemon/<%= pokemon._id%>?_method=delete" method="post">
+        <input type="submit" value="DELETE">
+    </form>
+    
+</body>
+</html>
