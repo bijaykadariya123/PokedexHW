@@ -5,20 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+body{
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/332/817/desktop-wallpaper-cute-pokemon-high-quality-fire-sylveon-iphone-starters-cute-baby-pikachu.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+h1 {
+  animation: moveLeftToRight 7s linear infinite; 
+  display:block; 
+  font-size: 2.5em;
+  margin-top: -.02em;
+}
+    .info{
+        display: flex;
+        justify-content: center;
+        padding:20px;
+    }
+
+    .mainPageButton{
+        font-size: 1.8em;
+        border-radius: .5em;
+        padding:.15em;
+        margin-left:.8em;
+        
+    }
+    .mainPageButton:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    label{
+        font-size:1.62em;
+    }
+    input{
+        font-size: 1em;
+        padding:.35em;
+        width: 15em;
+        border-radius: .7em;
+    }
+    .submitButton{
+        width: 7em;
+        font-size: 1.2em;
+        margin-left: 2.4em;
+        border-radius: 0.5em;
+      
+    }
+    .submitButton:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    </style>
 </head>
 <body>
-    <h1>Create a New Pokemon</h1>
-    <form action="/pokemon" method="post">
-        <input type="text" name="name" placeholder="Name of Pokemon">
-        <input type="text" name="type" placeholder="Type of Pokemon">
-        <input type="number" name="hp" placeholder="hp"/>
-        <input type="number" name="attack" placeholder="Attack" />
-        <input type="number" name="defense" placeholder="Defense" />
-        <input type="number" name="spattack" placeholder="spAttack" />
-        <input type="number" name="spdefense" placeholder="spDefense" />
-        <input type="number" name="speed" placeholder="Speed" />
-        <input type="submit" value="Add Pokemon" />
-    </form>
-    <a href="/pokemon"><button>Main Page</button></a>
+    <h1 style="color:rgb(0, 0, 255)">Create a New Pokemon</h1>
+
+    <a href="/pokemon"><button class="mainPageButton">Main Page</button></a>
+    <div class="info">
+        <form action="/pokemon" method="post">
+            <label> Name</label><br>
+            <input type="text" name="name" placeholder="Name of Pokemon"><br>
+            <label> Type</label><br>
+            <input type="text" name="type" placeholder="Type of Pokemon"><br>
+            <label> HP</label><br>
+            <input type="number" name="hp" placeholder="hp"/><br>
+            <label> Attack</label><br>
+            <input type="number" name="attack" placeholder="Attack" /><br>
+            <label> Defense</label><br>
+            <input type="number" name="defense" placeholder="Defense" /><br>
+            <label> spAttack</label><br>
+            <input type="number" name="spattack" placeholder="spAttack" /><br>
+            <label> spDefense</label><br>
+            <input type="number" name="spdefense" placeholder="spDefense" /><br>
+            <label> Speed</label><br>
+            <input type="number" name="speed" placeholder="Speed" /><br><br>
+            <input class="submitButton" type="submit" value="Add Pokemon" />
+        </form>
+</div>
 </body>
 </html>

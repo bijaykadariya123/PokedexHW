@@ -6,8 +6,8 @@ async function seed(){
     // what you want to do it here
     await Pokemon.deleteMany({})
 const createdPokemon = await Pokemon.create(pokemons)
-console.log(createdPokemon.length)
-console.log(createdPokemon[0]);    
+// console.log(createdPokemon.length)
+// console.log(createdPokemon[0]);    
 }
 
 
