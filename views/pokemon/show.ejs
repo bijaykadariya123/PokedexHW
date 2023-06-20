@@ -5,33 +5,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/108/704/1021/pokemon-charizard-anime-wallpaper-preview.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            color:black;
+        }
+          @keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.pokemonName {
+  animation: moveLeftToRight 8s linear infinite; 
+  display:block; 
+  color: rgb(199, 23, 23);
+  font-size: 5em;
+}
+li{
+   list-style: none;
+    font-size: 2em;
+    color:white
+ 
+}
+
+ 
+  img{
+    display: block;
+    margin:0 auto;
+  }
+  .mainPageButton{
+    font-size: 2em;
+    font-weight: bolder;
+    align-items: center;
+    border-radius: .5em; 
+    margin-left: 1.3em;
+  }
+  .mainPageButton:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+  .editButton{
+    font-size: 1.3em;
+    padding:.1em;
+    width: 4em;
+    border-radius: 1em;
+    font-weight: bolder;
+   
+  }
+  .editButton:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .submitButton{
+    font-size: 1.3em;
+    padding:.1em;
+    width: 5em;
+    border-radius: 1em;
+    font-weight: bolder;
+  }
+  .submitButton:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+
+  }
+.formClass{
+    display:flex;
+    width: 18em;
+    justify-content: space-between;
+}
+
+    </style>
 </head>
 <body>
-    <h1><%= pokemon.name %></h1>
-    <img src=" <%= pokemon.img %>" alt="image">
-    <ul>
-        <li>
-            <h2>Type:<br> <%= pokemon.type %></h2></div><br><br>
-            <!-- <form action="/pokemon/<%= pokemon._id %>?_method=delete" method="post">
-                <input type="submit" value="DELETE">
-            </form> -->
-        </li>
-        <li>
-            <h2>Description</h2>
-            <h4>HP: <%= pokemon.stats.hp %></h4>
-            <h4>Attack <%= pokemon.stats.attack %></h4>
-            <h4>Defense: <%= pokemon.stats.defense %></h4>
-            <h4>spAttack: <%= pokemon.stats.spattack %></h4>
-            <h4>spDefense <%= pokemon.stats.spdefense %></h4>
-            <h4>Speed: <%= pokemon.stats.speed %></h4>
-        </li>
-        
-</ul>
-    <a href="/pokemon"><button>Main Page</button></a>
-    <a href="/pokemon/<%= pokemon._id %>/edit"><button>EDIT</button></a>
-    <form action="/pokemon/<%= pokemon._id%>?_method=delete" method="post">
-        <input type="submit" value="DELETE">
-    </form>
-    
+    <h1 class="pokemonName"><%= pokemon.name %></h1>
+        <div class="container">
+            <a href="/pokemon"><button class="mainPageButton">Main Page</button></a>
+        </div>
+    <div class = "container">
+        <div class="content">
+            <img src=" <%= pokemon.img %>" alt="image">
+        </div>
+    </div>
+
+        <h1  style ="margin-left:1.82em;color:white;">Type: <%= pokemon.type %></h1>
+    <div>
+            <h1 style ="margin-left:2.1em;color:white;">Description</h1>
+            <ul>
+                <li>HP: <span style="margin-left: 3.5em;"> <%= pokemon.stats.hp %></span></li>
+                <li>Attack:<span style="margin-left: 2.1em;"> <%= pokemon.stats.attack %></span></li>
+                <li>Defense: <span style="margin-left: 1.5em;"><%= pokemon.stats.defense %></span></li>
+                <li>spAttack:<span style="margin-left: 1.2em;"> <%= pokemon.stats.spattack %></span></li>
+                <li>spDefense:<span style="margin-left: .55em;"> <%= pokemon.stats.spdefense %></span></li>
+                <li>Speed:<span style="margin-left: 2.25em;"> <%= pokemon.stats.speed %></span></li>
+            </ul>
+        <div class="formContent">
+            <div class="formClass">
+                <a href="/pokemon/<%= pokemon._id %>/edit"><button class="editButton">EDIT</button></a>
+                <form action="/pokemon/<%= pokemon._id%>?_method=delete" method="post">
+                    <input class="submitButton" type="submit" value="DELETE">
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

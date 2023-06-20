@@ -6,19 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-image: url("https://wallpaper.dog/large/20437276.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        margin: 0 auto;
+        width: max-content;
+        height: 100vh;
+    }
+    
+    label{
+        margin-top: 1em;
+        font-size: 1.3em;
+
+    }
+    input{
+        padding: 0.3em;
+        margin-top: .5em;
+        width: 15em;
+        border-radius: .7em;
+    }
+    form{
+        background-color: grey;
+        width: 13.5em;
+        padding:1em;
+        border-radius: .5rem;
+      
+    }
+   
+  button{
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    margin-left:2.5em;
+    border-radius: .5rem;
+  }
+  button:hover{
+    scale:calc(1.4);
+    background-color: black;
+    color:white;
+    cursor: pointer;
+  }
+  .submitButton{
+    font-size: .87em;
+    border-radius: .5rem;
+  }
+
+  .submitButton:hover{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+
+  }
+
+  @keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+h1 {
+  animation: moveLeftToRight 5s linear infinite; 
+  display:block; 
+  color: rgb(8, 8, 8);
+}
+   
+
+</style>
 <body>
     <h1>Edit Pokemon</h1>
-    <form action="/pokemon/<%= pokemon._id %>?_method=put" method="post">
-        <input type="text" name="name" placeholder="Name of Pokemon" value="<%= pokemon.name %>">
-        <input type="text" name="type" placeholder="Type of Pokemon" value="<%= pokemon.type %>" >
-        <input type="number" name="hp" placeholder="hp" value="<%= pokemon.stats.hp %>" />
-        <input type="number" name="attack" placeholder="Attack" value="<%= pokemon.stats.attack %>" />
-        <input type="number" name="defense" placeholder="Defense" value="<%= pokemon.stats.defense %>" />
-        <input type="number" name="spattack" placeholder="spAttack" value="<%= pokemon.stats.spattack %>" />
-        <input type="number" name="spdefense" placeholder="spDefense" value="<%= pokemon.stats.spdefense %>" />
-        <input type="number" name="speed" placeholder="Speed" value="<%= pokemon.stats.speed %>" />
-        <input type="submit" value="Add Pokemon" />
-    </form>
     <a href="/pokemon"><button>Main Page</button></a>
+    <form action="/pokemon/<%= pokemon._id %>?_method=put" method="post">
+        <label> Name of the Pokemon</label><br>
+        <input type="text" name="name" placeholder="Name of Pokemon" value="<%= pokemon.name %>"><br>
+        <label> Type</label><br>
+        <input type="text" name="type" placeholder="Type of Pokemon" value="<%= pokemon.type %>" ><br>
+        <label> HP </label><br>
+        <input type="number" name="hp" placeholder="hp" value="<%= pokemon.stats.hp %>" /><br>
+        <label> Attack of the Pokemon</label><br>
+        <input type="number" name="attack" placeholder="Attack" value="<%= pokemon.stats.attack %>" /><br>
+        <label> Defense</label><br>
+        <input type="number" name="defense" placeholder="Defense" value="<%= pokemon.stats.defense %>" /><br>
+        <label> spAttack</label><br>
+        <input type="number" name="spattack" placeholder="spAttack" value="<%= pokemon.stats.spattack %>" /><br>
+        <label> spDefense</label><br>
+        <input type="number" name="spdefense" placeholder="spDefense" value="<%= pokemon.stats.spdefense %>" /><br>
+        <label> Speed</label><br>
+        <input type="number" name="speed" placeholder="Speed" value="<%= pokemon.stats.speed %>" /><br>
+        <br>
+        <input class="submitButton" type="submit" value="Add Pokemon" /> 
+    </form>
+   
 </body>
 </html>

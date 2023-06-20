@@ -7,38 +7,98 @@
     <title>Document</title>
 </head>
 <style>
-  itemsList{
-    display:grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-    list-style: none;
-    padding:0;
+button{
+    width:11em;
+    height: 2em;
+    font-size: 1.5em;
+    background-color: black;
+    color: white;
+    border-radius: 1em;
+    margin-top: .5em;
+}
+button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+  .items{
+    background-color: black;
+    margin-top: -1em;
   }
-  itemsList img{
-    width: 100%;
-    height: auto;
+    li{
+        list-style: none;
+    }
+    .name{
+        font-size: 1em;
+        text-align: center;
+        color:grey;
+    }
+
+    img:hover{
+        transform: scale(1.1);
+        opacity:50%
+        
+    }
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1em;
+  
+}
+
+.column {
+  width: 19%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.column img {
+  width: 100%;
+  height: 15em;
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-50%);
   }
-  img:hover{
-    transform: scale(1.1);
-    opacity:50%
-    
+  100% {
+    transform: translateX(50%);
   }
+}
+
+h1 {
+  animation: moveLeftToRight 6s linear infinite; 
+  display:block; 
+  font-size: 2.5em;
+  margin-top: -.02em;
+}
+
+
+
 </style>
 <body>
-    <a href="/new"><button>Create New Pokemon</button></a>
-    <h1>List of Pokemon</h1>
-    <div class = "items">
-     <ul>
-        <% pokemons.forEach((pokemon, index)=>{ %>
-            <li class = "itemsList">
-                <a href="/pokemon/<%= pokemon._id %>">  <img src= "<%= pokemon.img %>"></a>
-            <div class = "itemsName">
-                <h2 class ="name"> Name: <%= pokemon.name %></h2>
-            </div>
-            </li>
+ 
+        <div class="container" >
+            <a href="/new"><button>Create New Pokemon</button></a>
+        </div>
+        <h1 style="text-align: center;">List of Pokemon</h1>
 
-        <%})%>
-    </ul>
+    <div class = "items">
+        <ul class="row">
+            <% pokemons.forEach((pokemon, index) => { %>
+              <li class="column">
+                <a href="/pokemon/<%= pokemon._id %>">
+                  <img src="<%= pokemon.img %>" alt="Pokemon Image">
+                </a>
+                <div class="itemsName">
+                  <h2 class="name">Pokemon: <%= pokemon.name %></h2>
+                </div>
+              </li>
+            <% }) %>
+          </ul>
+ 
    </div>
 </body>
 </html>

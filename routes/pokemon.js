@@ -12,9 +12,7 @@ router.get("/", controller.index)
 router.get("/new", controller.new)
 
 // destroy
-router.delete("/:id", (req, res)=>{
-    res.send("not implemented yet") 
-})
+router.delete("/:id", controller.destroy)
 // Update
 router.put("/:id", controller.update)
 //create
