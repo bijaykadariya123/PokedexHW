@@ -8,25 +8,20 @@ const router = Router()
 // Index
 router.get("/", controller.index)
 //New
-router.get("/new", (req, res)=> controller.new)
+// router.get("/new", (req, res)=> controller.new)
+router.get("/new", controller.new)
 
 // destroy
 router.delete("/:id", (req, res)=>{
     res.send("not implemented yet") 
 })
 // Update
-router.put("/:id", (req,res)=>{
-    res.send("not implemented yet")
-})
+router.put("/:id", controller.update)
 //create
-router.post("/", (req, res)=>{
-    res.send("not implemented yet")
-})
+router.post("/", controller.create)
 
 // edit
-router.get("/:id/edit", (req, res)=>{
-    res.send("not implemented yet")
-})
+router.get("/:id/edit", controller.edit)
 
 // show
 router.get("/:id", controller.show)
